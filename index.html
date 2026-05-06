@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Halaman Utama</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- HEADER-->
+         <header class="home-header">
+            <div class="header-left">
+                <img src="img/FixedLogo.png" alt="LogoBaru" class="logo-header">
+                <div class="header-titles">
+                    <h1 class="main-titles">POLIBAN</h1>
+                    <p class="sub-titles">POLITEKNIK NEGERI BANJARMASIN</p>
+                </div>
+            </div>
+
+            <!-- JAM DAN TANGGAL -->
+             <div class="header-center">
+                <div id="clock">00:00:00</div>
+                <div id="date">Memuat Tanggal..</div>
+             </div>
+
+            <div class="profile-menu">
+                <div class="btn-profile" id="menu-toggle" onclick="openMenu()" style="cursor: pointer;">
+                    <img src="img/menuicon.png" alt="Menu" width="30">
+                </div>
+         </header>
+         <div id="sidebar-container"></div>
+
+         <main class="dashboard-container">
+            <h2>Teknik Informatika</h2>
+            <div class="semester-grid">
+
+         <!-- SEMESTER 2 -->
+          <div class="card-home active-card">
+            <div class="card-icon">🚀</div>
+          <h3>Semester 2</h3>
+          <p>Status: Aktif</p>
+          <a href="semester/semester2.html" class="btn-home">Lihat</a>
+          </div>
+
+          <!-- SEMESTER 3 -->
+           <div class="card-home active-card">
+            <div class="card-icon">🔒</div>
+            <h3>Semester 3</h3>
+            <p>Status: Belum Aktif</p>
+            <a href="semester/semester3.html" class="btn-home">Segera..</a>
+           </div>
+
+           <!-- SEMESTER 4 -->
+            <div class="card-home active-card">
+            <div class="card-icon">🔒</div>
+            <h3>Semester 4</h3>
+            <p>Status: Belum Aktif</p>
+            <a href="semester/semester4.html" class="btn-home">Segera..</a>
+           </div>
+
+            </div>
+         </main>
+
+         <script src="script.js"></script>
+
+         <!-- FOOTER -->
+          <div class="footer1">Muhammad Isa Wildani</div>
+
+          
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Biodata Mahasiswa</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body class="halaman-materi">
+        <div id="sidebar-container"></div>
+        <div class="materi-container" style="max-width: 800px;">
+            <h2>Edit Biodata Mahasiswa</h2>
+
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+                <div style="flex: 1; min-width: 300px;">
+                    <label>Foto Profil:</label>
+                    <input type="file" id="inputFoto" accept="image/*" class="custom-file-input" onchange="previewImage()">
+
+                    <label>Nama Lengkap:</label>
+                    <input type="text" id="InputNama" placeholder="Masukkan Nama" class="custom-file-input">
+
+                    <label>NIM:</label>
+                    <input type="text" id="InputNIM" placeholder="Masukkan NIM" class="custom-file-input">
+
+                    <label>Kelas & Semester:</label>
+                    <input type="text" id="InputKelas" placeholder="Contoh: TI 2A - Semester 2" class="custom-file-input">
+
+                    <label>Keterangan:</label>
+                    <textarea id="InputKet" placeholder="Tentang saya..." class="custom-file-input" style="height: 80px;"></textarea>
+
+                    <button onclick="updateBiodata()" class="btn-kembali" style="background: #28a745; border: none; width: 100%;">Perbarui Data</button>
+                 </div>
+
+                 <div id="KartuBiodata" style="float: 1; min-width: 300px; border: 2px solid #eee; padding: 20px; border-radius: 15px; text-align: center; background: #f9f9f9;">
+                    <img id="fotoTampil" src="../img/fotobiodata.jpg" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid orange;">
+                    <h3 id="namaTampil">Nama Mahasiswa</h3>
+                    <p><strong id="nimTampil">NIM</strong></p>
+                    <p id="kelasTampil">Kelas / Semester</p>
+                    <hr>
+                    <p id="ketTampil" style="font-style: italic; color: #666;">Keterangan mahasiswa akan muncul disini.</p>
+                 </div>
+            </div>
+
+            <br>
+            <a href="../index.html" class="btn-kembali">Kembali ke Menu Utama</a>
+        </div>
+
+        <script>
+            function previewImage() {
+                const file = document.getElementById('inputFoto').file[0];
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    document.getElementById('fotoTampil').src = reader.result;
+                }
+                if (file) { reader.readAsDataURL(file); }
+            }
+
+            function updateBiodata() {
+                document.getElementById('namaTampil').innerText = document.getElementById('InputNama').value || "Nama Mahasiswa";
+                document.getElementById('nimTampil').innerText = document.getElementById('InputNIM').value || "NIM";
+                document.getElementById('kelasTampil').innerText = document.getElementById('InputKelas').value || "Kelas / Semester";
+                document.getElementById('KetTampil').innerText = `"${document.getElementById('InputKet').value || "Keterangan..."}"`;
+                alert("Biodata berhasil diperbarui!");
+            }
+        </script>
+    </body>
+</html>
